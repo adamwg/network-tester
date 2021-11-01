@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  namespace: default
+  name: net-test
+  labels:
+    app: net-test
+spec:
+  template:
+    metadata:
+      namespace: default
+      labels:
+        app: net-test
+    spec:
+      containers:
+      - name: net-test
+        image: docker.io/adamwg/net-test:latest
