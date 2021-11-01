@@ -6,6 +6,9 @@ metadata:
   labels:
     app: net-test
 spec:
+  selector:
+    matchLabels:
+      app: net-test
   template:
     metadata:
       namespace: default
