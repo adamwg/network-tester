@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: net-test
+  labels:
+    app: net-test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: net-test
+  template:
+    metadata:
+      namespace: default
+      labels:
+        app: net-test
+    spec:
+      containers:
+      - name: net-test
+        image: docker.io/adamwg/net-test:latest
+        resources: 
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
